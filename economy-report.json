@@ -1,0 +1,345 @@
+{
+  "status": "live-devnet-config-verified",
+  "network": "devnet",
+  "program": "9cwqM1TXytPnFZsLfmUyv2dg4uW6Ch9C6UJVPns7NFQ",
+  "source": "loot_cost; devnet getMinimumBalanceForRentExemption(17), (165), (208), checked 2026-10-25",
+  "cost": {
+    "text": "Going live takes 2 transactions (1 wallet approval) and about 0.01455388 SOL:\n  rent 0.01453388 SOL for 11 accounts; program fees 0 SOL; network fees 0.00002 SOL.\n  0.0010668 SOL: the mint of SOS (82 bytes)\n  0.00148844 SOL: your SOS account (165 bytes)\n  about 0.00168148 SOL: the collection (203 bytes)\n  0.00159004 SOL: the project (185 bytes)\n  0.00065024 SOL: the project\u2019s fee box (0 bytes)\n  0.00148844 SOL: the pool \u201csos-deposits\u201d (165 bytes)\n  0.00133096 SOL: the item \u201c1,000 SOS Stake Receipt\u201d (134 bytes)\n  0.0011938 SOL: the item \u201cFounder Pass\u201d (107 bytes)\n  0.00148844 SOL: the shop listing of \u201cFounder Pass\u201d (165 bytes)\n  0.00135636 SOL: the recipe \u201cStake 1,000 SOS\u201d (139 bytes)\n  0.00119888 SOL: the recipe \u201cWithdraw 1,000 SOS\u201d (108 bytes)\nWhile it runs (for a player, quote the \u201cin all\u201d number: it is what leaves their wallet for good):\n  buy \u201cFounder Pass\u201d (player): about 0.015105 SOL in all (the price, the player fee, the network, the collectible\u2019s rent, which never comes back). One transaction: the price is split and the item given at once.\n  craft \u201cStake 1,000 SOS\u201d (player): 0.002 SOL fee + 0.000005 SOL network; 0.0031 SOL for 1 new collectible (back: never: it is the collectible\u2019s own rent (about 0.0031 SOL each))\n  craft \u201cWithdraw 1,000 SOS\u201d (player): 0.002 SOL fee + 0.000005 SOL network\nAccounts marked \u201cabout\u201d are sized roughly (a Core collection or an external token account).\nThe network fee is 5,000 lamports a signature; a wallet may add a priority fee of its own.\n\nloot 0.17.0 \u00b7 program 9cwqM1TXytPnFZsLfmUyv2dg4uW6Ch9C6UJVPns7NFQ \u00b7 devnet",
+    "ok": true,
+    "from": "the spec given",
+    "setup": {
+      "accounts": [
+        {
+          "what": "the mint of SOS",
+          "bytes": 82,
+          "lamports": "1066800",
+          "sol": 0.0010668
+        },
+        {
+          "what": "your SOS account",
+          "bytes": 165,
+          "lamports": "1488440",
+          "sol": 0.00148844
+        },
+        {
+          "what": "the collection",
+          "bytes": 203,
+          "approx": true,
+          "lamports": "1681480",
+          "sol": 0.00168148
+        },
+        {
+          "what": "the project",
+          "bytes": 185,
+          "lamports": "1590040",
+          "sol": 0.00159004
+        },
+        {
+          "what": "the project\u2019s fee box",
+          "bytes": 0,
+          "lamports": "650240",
+          "sol": 0.00065024
+        },
+        {
+          "what": "the pool \u201csos-deposits\u201d",
+          "bytes": 165,
+          "lamports": "1488440",
+          "sol": 0.00148844
+        },
+        {
+          "what": "the item \u201c1,000 SOS Stake Receipt\u201d",
+          "bytes": 134,
+          "lamports": "1330960",
+          "sol": 0.00133096
+        },
+        {
+          "what": "the item \u201cFounder Pass\u201d",
+          "bytes": 107,
+          "lamports": "1193800",
+          "sol": 0.0011938
+        },
+        {
+          "what": "the shop listing of \u201cFounder Pass\u201d",
+          "bytes": 165,
+          "lamports": "1488440",
+          "sol": 0.00148844
+        },
+        {
+          "what": "the recipe \u201cStake 1,000 SOS\u201d",
+          "bytes": 139,
+          "lamports": "1356360",
+          "sol": 0.00135636
+        },
+        {
+          "what": "the recipe \u201cWithdraw 1,000 SOS\u201d",
+          "bytes": 108,
+          "lamports": "1198880",
+          "sol": 0.00119888
+        }
+      ],
+      "rentSol": 0.01453388,
+      "programFeesSol": 0,
+      "networkFeesSol": 2e-05,
+      "seeds": {},
+      "totalSol": 0.01455388,
+      "transactions": 2,
+      "approvals": 1,
+      "notes": [
+        "Accounts marked \u201cabout\u201d are sized roughly (a Core collection or an external token account).",
+        "The network fee is 5,000 lamports a signature; a wallet may add a priority fee of its own."
+      ]
+    },
+    "actions": [
+      {
+        "part": "item:founder-pass",
+        "action": "buy \u201cFounder Pass\u201d",
+        "who": "player",
+        "feeSol": 0.002,
+        "networkSol": 5e-06,
+        "deposits": [
+          {
+            "what": "1 new collectible",
+            "sol": 0.0031,
+            "back": "never: it is the collectible\u2019s own rent (about 0.0031 SOL each)"
+          }
+        ],
+        "note": "One transaction: the price is split and the item given at once.",
+        "inAllSol": 0.015105,
+        "onTopSol": 0.005105,
+        "holdSol": 0.015105,
+        "inAll": "about 0.015105 SOL in all (the price, the player fee, the network, the collectible\u2019s rent, which never comes back)"
+      },
+      {
+        "part": "recipe:stake-sos",
+        "action": "craft \u201cStake 1,000 SOS\u201d",
+        "who": "player",
+        "feeSol": 0.002,
+        "networkSol": 5e-06,
+        "deposits": [
+          {
+            "what": "1 new collectible",
+            "sol": 0.0031,
+            "back": "never: it is the collectible\u2019s own rent (about 0.0031 SOL each)"
+          }
+        ]
+      },
+      {
+        "part": "recipe:unstake-sos",
+        "action": "craft \u201cWithdraw 1,000 SOS\u201d",
+        "who": "player",
+        "feeSol": 0.002,
+        "networkSol": 5e-06,
+        "deposits": []
+      }
+    ],
+    "fees": {
+      "playerSol": 0.002,
+      "projectSol": 1e-05,
+      "oracleSol": 0.0005
+    }
+  },
+  "playerQuote": {
+    "firstStakeDebitSol": 0.005105,
+    "purchaseCounterSol": 0.0007366,
+    "buyIncludingCounterEstimateSol": 0.0158416,
+    "firstStakeAndBuyEstimateSol": 0.0209466,
+    "withdrawSol": 0.002005,
+    "fullCycleEstimateSol": 0.0229516,
+    "temporaryWrappedSolRentSol": 0.00148844
+  },
+  "previousFarmQuote": {
+    "initialDebitSol": 0.01955348,
+    "initialSpentSol": 0.0178466,
+    "refundableSeatSol": 0.00170688
+  },
+  "notes": [
+    "No rewards. Pool contains player principal only. The authority can move principal or alter receipts; this is not protected farm custody.",
+    "Loot quotes about 0.015105 SOL in all for buying. The page additionally budgets 0.0007366 SOL for the persistent purchase counter omitted by that quote.",
+    "NFT sizes are approximate. Priority fees and missing token accounts increase the total.",
+    "Assumes existing player SOS account and treasury wrapped-SOL account. A missing treasury account can add 0.00148844 SOL to the first purchase.",
+    "Withdrawals retain the used receipt. Its rent does not return. Each deposit is locked for seven days.",
+    "SOS supply of 1000000 at six decimals is a draft default; all starts in the owner's wallet. Distribution is separate.",
+    "Seven-day lock restored at the user's request. Each deposit unlocks independently; qualification continues while unredeemed after day seven."
+  ],
+  "simulation": {
+    "text": "Assuming 2 \u00d7 recipe:stake-sos, 2 \u00d7 recipe:unstake-sos, 2 \u00d7 item:founder-pass a day (anything not named: 100 a day), over 30 days.\nShop \u201cFounder Pass\u201d: 0.01 SOL; about 0.015105 SOL in all (the price, the player fee, the network, the collectible\u2019s rent, which never comes back).\nRecipe \u201cStake 1,000 SOS\u201d: 1000 SOS \u2192 stake-receipt, 2 a day.\nRecipe \u201cWithdraw 1,000 SOS\u201d: stake-receipt (kept) \u2192 1000 SOS, 2 a day.\nPool \u201csos-deposits\u201d: 2000 SOS in and 2000 out a day from a seed of 0; it holds steady.\nEach day players pay 0.02 SOL, 2000 SOS and get back 2000 SOS on average (items at the value you gave them), plus 0.012 SOL in player fees, 0 SOL to MagicBlock\u2019s oracle and 0.00003 SOL in network fees.\nThe treasury gets 0.02 SOL a day; burned: nothing. The platform\u2019s fees: 0.012 SOL a day.\n\nloot 0.17.0 \u00b7 program 9cwqM1TXytPnFZsLfmUyv2dg4uW6Ch9C6UJVPns7NFQ \u00b7 devnet",
+    "ok": true,
+    "from": "the spec given",
+    "summary": {
+      "boxes": [],
+      "pools": [
+        {
+          "key": "sos-deposits",
+          "lasts": "holds"
+        }
+      ],
+      "farms": [],
+      "platformSolPerDay": 0.012
+    },
+    "simulation": {
+      "scenario": {
+        "days": 30,
+        "perDay": {
+          "recipe:stake-sos": 2,
+          "recipe:unstake-sos": 2,
+          "item:founder-pass": 2
+        },
+        "defaultPerDay": 100
+      },
+      "boxes": [],
+      "items": [
+        {
+          "key": "founder-pass",
+          "name": "Founder Pass",
+          "price": 0.01,
+          "token": "sol",
+          "salesPerDay": 2,
+          "realCost": {
+            "price": 0.01,
+            "token": "sol",
+            "playerFeeSol": 0.002,
+            "oracleSol": 0,
+            "networkSol": 5e-06,
+            "rentSol": 0.0031,
+            "rentIs": "the collectible\u2019s rent",
+            "extrasSol": 0.005105,
+            "totalSol": 0.015105,
+            "holdSol": 0.015105
+          }
+        }
+      ],
+      "payments": [],
+      "recipes": [
+        {
+          "key": "stake-sos",
+          "name": "Stake 1,000 SOS",
+          "craftsPerDay": 2,
+          "takes": [
+            "1000 SOS"
+          ],
+          "gives": [
+            "stake-receipt"
+          ]
+        },
+        {
+          "key": "unstake-sos",
+          "name": "Withdraw 1,000 SOS",
+          "craftsPerDay": 2,
+          "takes": [
+            "stake-receipt (kept)"
+          ],
+          "gives": [
+            "1000 SOS"
+          ]
+        }
+      ],
+      "schedules": [],
+      "lotteries": [],
+      "farms": [],
+      "grants": [],
+      "contests": [],
+      "auctions": [],
+      "stashes": [],
+      "pools": [
+        {
+          "key": "sos-deposits",
+          "token": "sos",
+          "seed": 0,
+          "inPerDay": 2000,
+          "outPerDay": 2000,
+          "ins": [
+            {
+              "by": "recipe:stake-sos",
+              "perDay": 2000
+            }
+          ],
+          "outs": [
+            {
+              "by": "recipe:unstake-sos",
+              "perDay": 2000
+            }
+          ],
+          "after": 0,
+          "lasts": "holds"
+        }
+      ],
+      "perDay": {
+        "players": {
+          "pay": {
+            "sol": 0.02,
+            "sos": 2000
+          },
+          "getBack": {
+            "sos": 2000
+          },
+          "playerFeesSol": 0.012,
+          "oracleFeesSol": 0,
+          "networkFeesSol": 3e-05,
+          "rentSol": 0.0124
+        },
+        "creator": {
+          "treasury": {
+            "sol": 0.02
+          },
+          "projectFeesSol": 0,
+          "oracleFeesSol": 0,
+          "networkFeesSol": 0,
+          "grantRentSol": 0
+        },
+        "oracle": {
+          "totalSol": 0
+        },
+        "platform": {
+          "playerFeesSol": 0.012,
+          "projectFeesSol": 0,
+          "totalSol": 0.012
+        },
+        "burned": {},
+        "accounts": {}
+      },
+      "fees": {
+        "playerSol": 0.002,
+        "projectSol": 1e-05,
+        "oracleSol": 0.0005,
+        "networkPerSignatureSol": 5e-06,
+        "escrowSol": 0.006,
+        "ticketLineRentSol": 0.00194056,
+        "collectibleRentSol": 0.0031,
+        "burnRefundSol": 0.00096
+      },
+      "notes": []
+    }
+  },
+  "explanation": "SOS Launchpad: 2 tokens, 2 items, 1 pool, 2 recipes. The project\u2019s currency is SOL (SOL). It runs on the shared loot program, devnet only: no contract of its own.\nAsked for: \u201cPeople stake SOS for seven days to reach the 1,000 tier. Only wallets with at least 1,000 SOS still deposited can buy a Founder Pass NFT for 0.01 SOL, one per wallet. No reward pool, seed, emissions or free SOS. Use refundable 1,000-SOS deposits and wallet-bound single-use receipts.\u201d\n\nWhat players do, what it costs and what it is worth\n- Buy \u201cFounder Pass\u201d: 0.01 SOL, about 0.015105 SOL in all (the price, the player fee, the network, the collectible\u2019s rent, which never comes back); only players who show a \u201cstake-receipt\u201d whose used is \u201c0\u201d can buy it. The money: all of it to your treasury.\n- Craft \u201cStake 1,000 SOS\u201d: 1000 SOS \u2192 stake-receipt (+ 0.002 SOL player fee).\n- Craft \u201cWithdraw 1,000 SOS\u201d: stake-receipt (kept) \u2192 1000 SOS (+ 0.002 SOL player fee).\n\nHow the pools fill and drain\n- \u201csos-deposits\u201d (SOS): starts at 0; in: recipe:stake-sos 2000 a day; out: recipe:unstake-sos 2000 a day; it holds steady.\n\nWhat setting it up costs\n- About 0.014554 SOL in all, in 2 transactions (1 wallet approval): rent 0.014534 SOL for 11 accounts, program fees 0 SOL, network fees 0.00002 SOL.\n- Accounts marked \u201cabout\u201d are sized roughly (a Core collection or an external token account).\n- The network fee is 5,000 lamports a signature; a wallet may add a priority fee of its own.\n\nEach day, if 2 \u00d7 recipe:stake-sos, 2 \u00d7 recipe:unstake-sos, 2 \u00d7 item:founder-pass happen (anything else 100)\n- Players pay 0.02 SOL, 2000 SOS and get back 2000 SOS on average, plus 0.012 SOL in player fees.\n- Your treasury gets 0.02 SOL; burned: nothing; the platform\u2019s fees: 0.012 SOL.\n\nKnow before going live\n- Every purchase of \u201cFounder Pass\u201d also pays the platform\u2019s player fee of 0.002 SOL: 20.0% on top of its 0.01 SOL price. Fine for a game; a higher price makes the fee a smaller part of it.\n\nDevnet only: nothing here is real money. Going live is your approval in your own wallet: no one else signs, and no key is ever shared.\n\nloot 0.17.0 \u00b7 program 9cwqM1TXytPnFZsLfmUyv2dg4uW6Ch9C6UJVPns7NFQ \u00b7 devnet",
+  "publish": {
+    "text": "Going live: 2 transactions, 1 wallet approval, about 0.01455388 SOL on devnet:\n1. Make the token SOS (6 decimals) with a fixed supply of 1000000, all of it to your wallet, then turn its minting off for good\n2. Make the collection \u201cSOS Founder Collection\u201d, with 0% resale royalty to you; the project may mint into it\n3. Open the project on the loot program with its collection; your wallet signs its decisions, and your wallet is its treasury\n4. Open the pool \u201csos-deposits\u201d for SOS\n5. Write the item \u201c1,000 SOS Stake Receipt\u201d\n6. Write the item \u201cFounder Pass\u201d\n7. Put \u201cFounder Pass\u201d in the shop at 0.01 SOL\n8. Write the recipe \u201cStake 1,000 SOS\u201d\n9. Write the recipe \u201cWithdraw 1,000 SOS\u201d\n\nTo put it live, the person runs this in a terminal in the project folder (not you): npx -y @gamesfun/loot approve loot.json\nIt opens a page on their own computer; they connect a wallet set to devnet and approve. What lands is written back into the file.\n\nloot 0.17.0 \u00b7 program 9cwqM1TXytPnFZsLfmUyv2dg4uW6Ch9C6UJVPns7NFQ \u00b7 devnet",
+    "ok": true,
+    "command": "npx -y @gamesfun/loot approve loot.json",
+    "transactions": 2,
+    "approvals": 1,
+    "setupSol": 0.01455388,
+    "steps": [
+      "Make the token SOS (6 decimals) with a fixed supply of 1000000, all of it to your wallet, then turn its minting off for good",
+      "Make the collection \u201cSOS Founder Collection\u201d, with 0% resale royalty to you; the project may mint into it",
+      "Open the project on the loot program with its collection; your wallet signs its decisions, and your wallet is its treasury",
+      "Open the pool \u201csos-deposits\u201d for SOS",
+      "Write the item \u201c1,000 SOS Stake Receipt\u201d",
+      "Write the item \u201cFounder Pass\u201d",
+      "Put \u201cFounder Pass\u201d in the shop at 0.01 SOL",
+      "Write the recipe \u201cStake 1,000 SOS\u201d",
+      "Write the recipe \u201cWithdraw 1,000 SOS\u201d"
+    ]
+  },
+  "liveVerification": {
+    "at": "2026-10-25T12:04:43.596266+00:00",
+    "project": "9PER6tAszkrZn68M65zbwmMWztA1xcEpdehRFhyXkMKw",
+    "sosMint": "A9oLFYqZiqTSSd1gK59rghifBpB13GBqPwL2LNCsBgsF",
+    "source": "loot_status and page readSnapshot against devnet RPC",
+    "allRecordsPresent": true,
+    "paused": false,
+    "lockSeconds": 604800,
+    "passPriceLamports": "10000000",
+    "perWallet": 1,
+    "signedPlayerFlowTested": false
+  }
+}

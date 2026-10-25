@@ -1,0 +1,239 @@
+{
+  "version": 2,
+  "network": "devnet",
+  "name": "SOS Launchpad",
+  "prompt": "People stake SOS for seven days to reach the 1,000 tier. Only wallets with at least 1,000 SOS still deposited can buy a Founder Pass NFT for 0.01 SOL, one per wallet. No reward pool, seed, emissions or free SOS. Use refundable 1,000-SOS deposits and wallet-bound single-use receipts.",
+  "currency": "sol",
+  "tokens": [
+    {
+      "key": "sol",
+      "source": "sol"
+    },
+    {
+      "key": "sos",
+      "source": "game",
+      "name": "SOS",
+      "symbol": "SOS",
+      "decimals": 6,
+      "supply": 1000000
+    }
+  ],
+  "collection": {
+    "name": "SOS Founder Collection",
+    "royaltyPercent": 0
+  },
+  "items": [
+    {
+      "key": "stake-receipt",
+      "name": "1,000 SOS Stake Receipt",
+      "kind": "collectible",
+      "soulbound": true,
+      "life": {
+        "readyAfter": "7d",
+        "uses": 1
+      },
+      "description": "A wallet-bound receipt for 1,000 SOS held in the deposit vault. Redeem once after seven days to withdraw principal. A redeemed receipt no longer qualifies for the sale.",
+      "id": 1
+    },
+    {
+      "key": "founder-pass",
+      "name": "Founder Pass",
+      "kind": "collectible",
+      "price": 0.01,
+      "perWallet": 1,
+      "gate": {
+        "item": "stake-receipt",
+        "attribute": "used",
+        "equals": "0"
+      },
+      "id": 2,
+      "shopBox": 1
+    }
+  ],
+  "pools": [
+    {
+      "key": "sos-deposits",
+      "currency": "sos",
+      "about": "Refundable SOS principal deposited by players, not rewards. Each unredeemed receipt is a claim for exactly 1,000 SOS. No seed, emissions or sale revenue. The project authority can move these pool funds; users must trust the operator to preserve backing.",
+      "index": 0
+    }
+  ],
+  "recipes": [
+    {
+      "key": "stake-sos",
+      "name": "Stake 1,000 SOS",
+      "in": [
+        {
+          "takes": "pay",
+          "currency": "sos",
+          "amount": 1000,
+          "to": "pool:sos-deposits"
+        }
+      ],
+      "out": [
+        {
+          "gives": "item",
+          "item": "stake-receipt"
+        }
+      ],
+      "id": 1
+    },
+    {
+      "key": "unstake-sos",
+      "name": "Withdraw 1,000 SOS",
+      "in": [
+        {
+          "takes": "use",
+          "item": "stake-receipt"
+        }
+      ],
+      "out": [
+        {
+          "gives": "tokens",
+          "currency": "sos",
+          "amount": 1000,
+          "from": "pool:sos-deposits"
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "scenario": {
+    "days": 30,
+    "players": 100,
+    "perDay": {
+      "recipe:stake-sos": 2,
+      "recipe:unstake-sos": 2,
+      "item:founder-pass": 2
+    }
+  },
+  "live": {
+    "program": "9cwqM1TXytPnFZsLfmUyv2dg4uW6Ch9C6UJVPns7NFQ",
+    "project": "9PER6tAszkrZn68M65zbwmMWztA1xcEpdehRFhyXkMKw",
+    "collection": "AMJUhJsuU1onNXUSmogVtHpzXrLwYt7DCKdgmkEB3EZH",
+    "treasury": "9yeeijcs5hh6U3gwcqMzZKBFkofrk23PPbtEqEcG2CTQ",
+    "authority": "9yeeijcs5hh6U3gwcqMzZKBFkofrk23PPbtEqEcG2CTQ",
+    "mints": {
+      "sos": "A9oLFYqZiqTSSd1gK59rghifBpB13GBqPwL2LNCsBgsF"
+    },
+    "at": "2026-10-25T11:57:44.595Z",
+    "published": {
+      "version": 2,
+      "network": "devnet",
+      "name": "SOS Launchpad",
+      "prompt": "People stake SOS for seven days to reach the 1,000 tier. Only wallets with at least 1,000 SOS still deposited can buy a Founder Pass NFT for 0.01 SOL, one per wallet. No reward pool, seed, emissions or free SOS. Use refundable 1,000-SOS deposits and wallet-bound single-use receipts.",
+      "currency": "sol",
+      "tokens": [
+        {
+          "key": "sol",
+          "source": "sol"
+        },
+        {
+          "key": "sos",
+          "source": "game",
+          "name": "SOS",
+          "symbol": "SOS",
+          "decimals": 6,
+          "supply": 1000000
+        }
+      ],
+      "collection": {
+        "name": "SOS Founder Collection",
+        "royaltyPercent": 0
+      },
+      "items": [
+        {
+          "key": "stake-receipt",
+          "name": "1,000 SOS Stake Receipt",
+          "kind": "collectible",
+          "soulbound": true,
+          "life": {
+            "readyAfter": "7d",
+            "uses": 1
+          },
+          "description": "A wallet-bound receipt for 1,000 SOS held in the deposit vault. Redeem once after seven days to withdraw principal. A redeemed receipt no longer qualifies for the sale.",
+          "id": 1
+        },
+        {
+          "key": "founder-pass",
+          "name": "Founder Pass",
+          "kind": "collectible",
+          "price": 0.01,
+          "perWallet": 1,
+          "gate": {
+            "item": "stake-receipt",
+            "attribute": "used",
+            "equals": "0"
+          },
+          "id": 2,
+          "shopBox": 1
+        }
+      ],
+      "pools": [
+        {
+          "key": "sos-deposits",
+          "currency": "sos",
+          "about": "Refundable SOS principal deposited by players, not rewards. Each unredeemed receipt is a claim for exactly 1,000 SOS. No seed, emissions or sale revenue. The project authority can move these pool funds; users must trust the operator to preserve backing.",
+          "index": 0
+        }
+      ],
+      "recipes": [
+        {
+          "key": "stake-sos",
+          "name": "Stake 1,000 SOS",
+          "in": [
+            {
+              "takes": "pay",
+              "currency": "sos",
+              "amount": 1000,
+              "to": "pool:sos-deposits"
+            }
+          ],
+          "out": [
+            {
+              "gives": "item",
+              "item": "stake-receipt"
+            }
+          ],
+          "id": 1
+        },
+        {
+          "key": "unstake-sos",
+          "name": "Withdraw 1,000 SOS",
+          "in": [
+            {
+              "takes": "use",
+              "item": "stake-receipt"
+            }
+          ],
+          "out": [
+            {
+              "gives": "tokens",
+              "currency": "sos",
+              "amount": 1000,
+              "from": "pool:sos-deposits"
+            }
+          ],
+          "id": 2
+        }
+      ],
+      "scenario": {
+        "days": 30,
+        "players": 100,
+        "perDay": {
+          "recipe:stake-sos": 2,
+          "recipe:unstake-sos": 2,
+          "item:founder-pass": 2
+        }
+      }
+    },
+    "transactions": [
+      {
+        "signature": "5sQGUFxH4qVK6cVwW23vxHweGc2eR1eewqMD1hutQrHrdBmL1y2wAJUX3xSiV8BkERK6UunQeqSdr8p4xCYgyfJ1"
+      },
+      {
+        "signature": "2FDh67ZHsm8J2TJri8rfBcctQteiNEtDRmyWvzykZSMLhWsoFc6kkcjrzBJoNnostzu626MBvUuUHytiAYhsZkRe"
+      }
+    ]
+  }
+}

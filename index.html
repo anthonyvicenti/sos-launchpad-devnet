@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f5ee" />
+    <meta name="description" content="Stake SOS, unlock Founder access, and collect the first SOS Founder Pass. A Solana devnet launchpad." />
+    <title>SOS — The starting point</title>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <script type="module" crossorigin src="./assets/index-Dbp6HWCP.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BWoUEvXo.css">
+  </head>
+  <body>
+    <a class="skip-link" href="#launchpad">Skip to launchpad</a>
+    <header class="header">
+      <a href="#" class="brand" aria-label="SOS Launchpad home"><span class="brand-mark">sos<span class="brand-dot">✳</span></span><span class="brand-divider"></span><span class="brand-label">LAUNCHPAD</span></a>
+      <nav aria-label="Main navigation"><a href="#launchpad" class="active">Launchpad</a><a href="#how-it-works">How it works <span>↗</span></a></nav>
+      <div class="header-actions"><span class="network"><span></span> Solana devnet</span><button id="wallet-button" class="button dark small" disabled>Loading wallet connection…</button></div>
+    </header>
+    <main>
+      <div class="environment-note"><span class="status-dot"></span><span id="environment-text">Loading Solana devnet launchpad… Test tokens only.</span><span class="note-right">THE BEGINNING OF SOMETHING</span></div>
+      <noscript><p class="notice error">JavaScript is required to connect your wallet and use this launchpad. Enable it, then reload this page.</p></noscript>
+      <div id="launch-block" class="notice error" role="status" hidden></div>
+      <section class="hero" aria-labelledby="hero-title">
+        <div><div class="eyebrow"><span class="short-line"></span> BUILT FOR THE EARLY ONES</div><h1 id="hero-title">Your stake.<br>Your starting <span class="point-word">point<svg viewBox="0 0 260 18" aria-hidden="true"><path d="M2 13Q120-6 257 9M22 16Q140 1 242 14" /></svg></span><span class="lime-period">.</span></h1><p class="hero-description">Put your SOS to work unlocking access.<br>Stake your tokens. Find your tier. Be there first.</p></div>
+        <div class="hero-aside"><div class="orbit-symbol" aria-hidden="true">↗</div><div class="hero-aside-text"><span class="eyebrow">YOUR FIRST UNLOCK</span><p>1,000 SOS.<br>A seat at the start.</p><a class="text-link" href="#sale">Explore the Founder Pass <span>↗</span></a></div></div>
+      </section>
+      <section class="wallet-strip" aria-label="Your wallet overview">
+        <div><span class="stat-label">YOUR SOS BALANCE</span><strong><span id="balance">—</span><small>SOS</small></strong></div>
+        <div><span class="stat-label">CURRENTLY STAKED</span><strong><span id="staked">—</span><small>SOS</small></strong></div>
+        <div><span class="stat-label">YOUR ACCESS TIER</span><strong id="current-tier" class="tier-value">Not connected <span>↗</span></strong></div>
+        <div class="wallet-strip-end"><span class="small-orbit" aria-hidden="true">◎</span><span id="wallet-hint">Connect your wallet<br>to see where you stand.</span><button id="refresh-button" class="icon-button" aria-label="Refresh wallet status" disabled>↻</button></div>
+      </section>
+      <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+      <section id="launchpad" class="workspace" aria-label="Stake and buy">
+        <article class="panel stake-panel">
+          <div class="panel-heading"><span class="eyebrow">01 / YOUR STAKE</span><span class="tiny-symbol" aria-hidden="true">✳</span></div>
+          <h2>Access starts here.</h2><p class="muted">Deposit 1,000 SOS to unlock the Founder tier.</p>
+          <div class="tabs" role="group" aria-label="Staking action"><button id="stake-tab" class="selected" aria-pressed="true">Stake</button><button id="withdraw-tab" aria-pressed="false">Withdraw</button></div>
+          <form id="stake-form">
+            <div class="input-label"><label for="amount" id="amount-label">Amount to stake</label><span class="fine-print">1,000 SOS per deposit</span></div>
+            <div class="amount-input"><input id="amount" name="amount" type="text" inputmode="decimal" autocomplete="off" value="1000" readonly aria-describedby="amount-error lock-explainer" /><span class="token-dot">S</span><span>SOS</span></div>
+            <p id="amount-error" class="field-error" role="alert" hidden></p>
+            <div class="lock-row"><span><span aria-hidden="true">◷</span> Fixed lock period</span><strong id="lock-period">7 days</strong></div>
+            <p id="lock-explainer" class="fine-print">Each deposit creates a nontransferable receipt for 1,000 SOS. Seven-day lock and no rewards. The project authority controls the deposit vault.</p>
+            <button type="submit" id="stake-button" class="button dark full" disabled>Loading launchpad…</button>
+            <p class="fee-note" id="stake-fees">Estimated 0.005105 SOL + 1,000 SOS principal per deposit.<br>Includes receipt NFT rent; no SOL deposit is refunded on withdrawal.</p>
+          </form>
+          <div class="tier-card"><div class="tier-card-top"><span class="tier-icon" aria-hidden="true">✧</span><div><strong>Founder tier</strong><span>1,000 SOS minimum, still deposited</span></div><span id="tier-check">↗</span></div><div class="progress-track" role="progressbar" aria-label="Progress to Founder tier" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="tier-progress"></div></div><div class="tier-progress-label"><span id="progress-label">Connect to check your tier</span><span>1,000 SOS</span></div></div>
+          <div id="stake-management" hidden><p class="fine-print" id="unlock-date"></p></div>
+        </article>
+        <article id="sale" class="panel sale-panel">
+          <div class="panel-heading"><span class="eyebrow">02 / THE FIRST DROP</span><span class="sale-status" id="sale-status"><span class="status-dot"></span> Checking launch status…</span></div>
+          <div class="pass-art" role="img" aria-label="Founder Pass design: a lime orbital emblem on a black membership card"><div class="art-grid"></div><div class="art-top"><span>SOS / GENESIS</span><span>EDITION 001 ↗</span></div><div class="orbital-art" aria-hidden="true"><svg viewBox="0 0 420 245"><defs><radialGradient id="orb"><stop offset="0" stop-color="#e9ffab"/><stop offset=".6" stop-color="#c3ed79"/><stop offset="1" stop-color="#6a9b26"/></radialGradient></defs><g fill="none" stroke="#c7f58a" stroke-width="1"><ellipse cx="210" cy="122" rx="167" ry="46" transform="rotate(-28 210 122)"/><ellipse cx="210" cy="122" rx="167" ry="46" transform="rotate(28 210 122)"/><ellipse cx="210" cy="122" rx="167" ry="46" transform="rotate(90 210 122)"/></g><circle cx="210" cy="122" r="52" fill="url(#orb)"/><path d="M210 91v62M179 122h62M188 100l44 44M188 144l44-44" stroke="#263c1c" stroke-width="10"/><circle cx="64" cy="201" r="5" fill="#c7f58a"/><circle cx="306" cy="60" r="4" fill="#c7f58a"/></svg></div><div class="art-bottom"><div>FOUNDER<br><span>PASS</span></div><div class="art-caption">EARLY IS A<br>STATE OF MIND.<span class="barcode" aria-hidden="true"></span></div></div></div>
+          <div class="sale-content"><div class="sale-title"><div><span class="eyebrow">SOS LAUNCHPAD · COLLECTIBLE</span><h2>Founder Pass<span>↗</span></h2></div></div><p class="muted sale-description">A little proof you were here at the beginning. The first collectible for the SOS community.</p>
+            <div class="sale-facts"><div><span>SALE PRICE</span><strong><span id="sale-price">0.01</span><small>SOL</small></strong></div><div><span>ACCESS</span><strong>Founder<small>tier</small></strong></div><div><span>WALLET LIMIT</span><strong>1<small>pass</small></strong></div></div>
+            <div class="eligibility"><span id="eligibility-icon" aria-hidden="true">⌑</span><div><strong id="eligibility-title">Your stake is your access.</strong><p id="eligibility-detail">Deposit 1,000 SOS to qualify for this sale.</p></div></div>
+            <button id="buy-button" class="button lime full" disabled>Loading launchpad…</button><div class="total-cost"><span>Estimated purchase total</span><strong id="buy-total">≈ 0.0158416 SOL</strong></div>
+            <details class="cost-details"><summary>What’s included & sale terms <span>+</span></summary><div><p id="buy-cost-detail">Loot estimates about 0.015105 SOL in all for the purchase. The displayed total also includes 0.0007366 SOL for your wallet’s first-purchase counter.</p><p>The 0.01 SOL price goes to the project treasury. The platform fee is 0.002 SOL, network is 0.000005 SOL, collectible rent is estimated at 0.0031 SOL, and the purchase counter is 0.0007366 SOL. Keep another 0.00148844 SOL available for a temporary wrapped-SOL account; it returns in the same purchase transaction. Your wallet shows the final cost and any priority fee.</p><p>One unredeemed receipt proves a 1,000 SOS deposit. Withdrawing that deposit retires the receipt and removes its access. Buying does not spend or withdraw your SOS. One purchase per wallet for this sale, even if you transfer the NFT. The pass is transferable; there is no total edition cap or promised resale value.</p></div></details>
+          </div>
+        </article>
+      </section>
+      <section class="claims-section" id="claims-section" hidden><div><h3>Ready to collect</h3><p class="muted">Finish any pending transactions for your wallet.</p></div><div id="claims-list"></div></section>
+      <section id="how-it-works" class="how-section"><div class="how-heading"><span class="eyebrow">A SIMPLE WAY IN</span><h2>From SOS to first access.</h2><p>Three steps. Your wallet, every time.</p></div><ol><li><span>01</span><h3>Bring your SOS</h3><p>Connect a Solana wallet with devnet SOS and a little test SOL for fees.</p></li><li><span>02</span><h3>Stake to qualify</h3><p>Deposit exactly 1,000 SOS per receipt for seven days. Access lasts while at least one receipt remains unredeemed.</p></li><li><span>03</span><h3>Make it yours</h3><p>Buy one Founder Pass for 0.01 SOL plus fees. Redeem your deposit after seven days to return your SOS.</p></li></ol></section>
+      <section class="fee-summary" aria-labelledby="fee-summary-title"><span class="eyebrow">KNOW THE TOTAL BEFORE YOU SIGN</span><h2 id="fee-summary-title">The price and the fees.</h2><p class="muted">The pass price is 0.01 SOL. Depositing SOS and receiving the NFTs cost extra. This receipt-based design costs more than the previous farm design.</p><div class="fee-table-wrap"><table><thead><tr><th scope="col">One deposit + one pass</th><th scope="col">Estimated SOL</th></tr></thead><tbody><tr><td>Pass price, paid to the treasury</td><td>0.01000000</td></tr><tr><td>Platform fees: 0.002 to deposit + 0.002 to buy</td><td>0.00400000</td></tr><tr><td>Network fees for both transactions</td><td>0.00001000</td></tr><tr><td>Two NFT accounts: deposit receipt + pass</td><td>0.00620000</td></tr><tr><td>One-per-wallet purchase record rent</td><td>0.00073660</td></tr><tr class="fee-subtotal"><th scope="row">Estimated deposit + purchase total</th><td>0.02094660</td></tr></tbody></table></div><p class="fine-print">Plus 1,000 SOS principal held in the deposit vault. A later withdrawal costs another 0.002005 SOL, making the full deposit → buy → withdraw cycle about 0.0229516 SOL. The receipt stays in your wallet after redemption; its rent is not returned. Allow 0.00148844 SOL for a temporary wrapped-SOL account, returned within the purchase transaction. These estimates assume an existing SOS token account and the treasury’s SOL token account; creating missing accounts and wallet priority fees can cost extra. Actual NFT sizes may vary.</p><details class="cost-details"><summary>Why the earlier estimate was 0.01955348 SOL <span>+</span></summary><div><p>The previous farm design combined the 0.01 SOL price, 0.004 SOL platform fees, 0.00001 SOL network fees, about 0.0031 SOL pass rent, and 0.0007366 SOL purchase-record rent. That was 0.0178466 SOL spent, plus a 0.00170688 SOL staking-seat deposit refundable on full withdrawal. Calling the whole 0.01955348 SOL permanent spending was imprecise.</p><p>The removed SOS reward seed was paid by the project. Removing it does not reduce the platform or NFT costs. This version replaces the refundable seat with a nontransferable deposit receipt, adding about 0.0031 SOL of NFT rent instead.</p></div></details></section>
+      <div class="reward-note"><span aria-hidden="true">ⓘ</span><p><strong>No staking rewards or reward pool.</strong> The only SOS vault holds player deposits. After seven days, each unredeemed receipt returns exactly 1,000 SOS once; there is no seed or emission for the first staker to claim. <strong>Operator trust is required:</strong> the project authority can move vault funds, issue or change receipts, and pause withdrawals. Withdrawals require enough SOS in the vault and an enabled recipe. A receipt does not guarantee that the vault remains fully backed.</p></div>
+    </main>
+    <footer><a href="#" class="brand-mark">sos<span class="brand-dot">✳</span></a><span>GOOD THINGS START SOMEWHERE.</span><span>Built on Solana <span class="footer-dot">●</span> Devnet only</span></footer>
+    <dialog id="wallet-dialog"><div class="dialog-top"><span class="eyebrow">YOUR WALLET, YOUR ACCESS</span><button id="close-wallet" class="icon-button" aria-label="Close wallet chooser">×</button></div><h2>Connect a wallet.</h2><p class="muted">Use a Solana wallet that supports devnet.</p><div id="wallet-list"></div><p class="fine-print">Connection lets this page read your public wallet. Every transaction requires your wallet’s signature.</p></dialog>
+    <script>
+      // This small fallback also works when a host cannot serve the application module at all.
+      (() => {
+        let pending = true;
+        const timer = setTimeout(fail, 25000);
+        function fail(cause = 'The application did not finish starting within 25 seconds.') {
+          if (!pending) return;
+          clearTimeout(timer);
+          document.getElementById('environment-text').textContent = 'Solana devnet · Page could not start.';
+          document.getElementById('sale-status').textContent = '● Status unavailable';
+          for (const id of ['wallet-button', 'stake-button', 'buy-button']) {
+            const button = document.getElementById(id);
+            button.disabled = true;
+            button.textContent = 'Page unavailable · reload to retry';
+          }
+          const block = document.getElementById('launch-block');
+          block.hidden = false;
+          block.textContent = 'The page could not load its wallet controls. Reload to try again. If it still fails, share the startup details below with the project owner. ';
+          const retry = document.createElement('a');
+          retry.href = location.href; retry.textContent = 'Reload page'; block.append(retry);
+          const details = document.createElement('details'), summary = document.createElement('summary'), reason = document.createElement('p');
+          summary.textContent = 'Startup details';
+          reason.textContent = `${location.origin}${location.pathname} — ${String(cause)}`;
+          details.append(summary, reason); block.append(details);
+        }
+        window.sosStartup = { fail, ready() { pending = false; clearTimeout(timer); } };
+        window.addEventListener('error', event => {
+          if (event.target instanceof HTMLScriptElement && event.target.type === 'module') fail(`Could not load ${event.target.src}`);
+        }, true);
+      })();
+    </script>
+  </body>
+</html>

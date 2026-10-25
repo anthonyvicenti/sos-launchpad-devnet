@@ -1,0 +1,44 @@
+{
+  "schema": "sos-launchpad-design/v2",
+  "status": "ready",
+  "network": "devnet",
+  "deployed": true,
+  "requested": {
+    "minimumActiveStake": 1000,
+    "passPriceSol": 0.01,
+    "purchasesPerWallet": 1,
+    "rewards": false,
+    "rewardPool": false,
+    "stakeLockDays": 7
+  },
+  "design": "Refundable 1,000-SOS deposits backed by single-use wallet-bound receipts. Each receipt has a seven-day withdrawal lock. Principal pool controlled by the project authority.",
+  "approval": {
+    "ready": true,
+    "specFile": "loot.json",
+    "command": "npx -y @gamesfun/loot@0.17.0 approve loot.json",
+    "completedAt": "2026-10-25T11:57:44.595Z",
+    "note": "Already deployed. Starting or hosting the website does not require repeating wallet approval."
+  },
+  "warnings": [
+    "W-FEE: 0.002 SOL platform fee for each purchase, 20% above the 0.01 SOL sticker price.",
+    "Deposits and withdrawals each also pay a 0.002 SOL platform fee.",
+    "Project authority can spend deposited principal, alter receipts or pause withdrawals. Operator trust required.",
+    "Devnet only. No real-money launch."
+  ],
+  "liveVerification": {
+    "at": "2026-10-25T12:04:43.596266+00:00",
+    "project": "9PER6tAszkrZn68M65zbwmMWztA1xcEpdehRFhyXkMKw",
+    "sosMint": "A9oLFYqZiqTSSd1gK59rghifBpB13GBqPwL2LNCsBgsF",
+    "source": "loot_status and page readSnapshot against devnet RPC",
+    "allRecordsPresent": true,
+    "paused": false,
+    "lockSeconds": 604800,
+    "passPriceLamports": "10000000",
+    "perWallet": 1,
+    "signedPlayerFlowTested": false
+  },
+  "approvedTokenTerms": {
+    "tokenSupply": 1000000,
+    "tokenDecimals": 6
+  }
+}
