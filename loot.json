@@ -43,11 +43,12 @@
       "perWallet": 1,
       "gate": {
         "item": "stake-receipt",
-        "attribute": "used",
-        "equals": "0"
+        "attribute": "redeemed_until",
+        "time": "passed"
       },
       "id": 2,
-      "shopBox": 1
+      "shopBox": 1,
+      "closes": "2090-01-01T00:00:00Z"
     }
   ],
   "pools": [
@@ -95,7 +96,16 @@
           "from": "pool:sos-deposits"
         }
       ],
-      "id": 2
+      "id": 2,
+      "raises": [
+        {
+          "place": 0,
+          "key": "redeemed_until",
+          "by": 2147483647,
+          "upTo": 2147483647,
+          "fromNow": true
+        }
+      ]
     }
   ],
   "scenario": {

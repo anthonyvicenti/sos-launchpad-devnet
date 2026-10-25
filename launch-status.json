@@ -17,7 +17,7 @@
     "specFile": "loot.json",
     "command": "npx -y @gamesfun/loot@0.17.0 approve loot.json",
     "completedAt": "2026-10-25T11:57:44.595Z",
-    "note": "Already deployed. Starting or hosting the website does not require repeating wallet approval."
+    "note": "Initial deployment is live. A sale/withdrawal rule repair is awaiting owner approval; the page checks the actual records and enables buying only after both updates land."
   },
   "warnings": [
     "W-FEE: 0.002 SOL platform fee for each purchase, 20% above the 0.01 SOL sticker price.",
@@ -40,5 +40,15 @@
   "approvedTokenTerms": {
     "tokenSupply": 1000000,
     "tokenDecimals": 6
+  },
+  "repair": {
+    "status": "awaiting-owner-approval",
+    "cause": "Fresh receipts omit used, but the original gate required the text 0.",
+    "approvalCommand": "npx -y @gamesfun/loot@0.17.0 approve loot.json",
+    "requiresRestake": false,
+    "keepsOriginalLock": true,
+    "saleCloses": "2090-01-01T00:00:00Z",
+    "retirementAttribute": "redeemed_until",
+    "retirementSeconds": 2147483647
   }
 }

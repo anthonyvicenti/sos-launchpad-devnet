@@ -1,7 +1,5 @@
-# SOS launchpad — devnet demo
+# SOS Launchpad — devnet
 
-Static files for the SOS tester website. Solana devnet and test tokens only; no real-money sale.
+Open https://anthonyvicenti.github.io/sos-launchpad-devnet/ . This static site needs no local server. Test tokens only.
 
-Website: https://anthonyvicenti.github.io/sos-launchpad-devnet/
-
-Connect a devnet wallet, deposit 1,000 SOS for seven days, then buy one Founder Pass. No staking rewards. The source workspace holds the owner tools; this repository only contains the public website.
+Receipt display repaired. The site verifies live rules and shows Awaiting owner update until the owner approves the sale/withdrawal rule repair. Existing deposits and seven-day locks remain; do not stake again.
